@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base{
+    
+    *{
+        @apply box-border
+    }
+
+}
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+  } 
+  body {
+    font-family: "montserrat";
+  }
+
+  .button_slide {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #0046BE ;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+  .slide_right:hover {
+    box-shadow: inset 400px 0 0 0 #0046BE;
+    color: #FFF;
+  }
+  .btn{
+    @apply rounded-lg border px-5 py-3 cursor-pointer 
+  }
+  @media (max-width: 374px){
+      .btn{
+          @apply px-2 py-2 text-xs -mr-2 h-12 w-12
+      }
+  }
+  .sidebar{
+      @apply mx-3 hover:opacity-70 md:mb-12 hover:-translate-y-2 transition
+  }
+  .clip
+  {
+    clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+  }
+  .icon{
+    @apply mx-5 mb-7
+  }
+
+/*projects-section*/
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+   
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 40px;
+  }
+  .project-card {
+    overflow: hidden;
+    background: white;
+    box-shadow: -2px 7px 21px -9px rgb(0 0 0 / 75%);
+  }
+  .post-preview {
+    color: black;
+    padding: 20px;
+    font-weight: 500;
+  }
+  .post-title {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Russo One", sans-serif;
+  }
+  .post-intro {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #4b5156;
+  }
+  
+  .post-button {
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    font-size: 13px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgb(0 0 0 / 25%);
+    background: #00B0FF;
+    border: none;
+    color: #e4f9ff;
+    margin-right: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    @apply py-3
+  }
+  .post-button:hover {
+    opacity: 0.7;
+  }
+
+  /*Contact*/
+  .contact-width{
+    width: 40ch;
+  }
 }
